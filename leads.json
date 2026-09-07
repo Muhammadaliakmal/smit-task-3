@@ -1,0 +1,35 @@
+[
+  {
+    "id": "L1",
+    "platform": "Upwork",
+    "message": "Hi - we need a Python developer to build a scraper for 3 e-commerce sites (product name, price, stock) writing to CSV daily. Scope is written up in a 2-page doc I can share. Budget is 80,000 PKR, timeline 2 weeks. Are you available?"
+  },
+  {
+    "id": "L2",
+    "platform": "Fiverr",
+    "message": "Building the next big fintech app for Pakistan. Can't pay cash right now but offering 5% equity and revenue share once we launch. This is a ground-floor opportunity, you'd be a founding engineer. Need a full backend in FastAPI."
+  },
+  {
+    "id": "L3",
+    "platform": "Upwork",
+    "message": "hi. i need a website. how much?"
+  },
+  {
+    "id": "L4",
+    "platform": "Upwork",
+    "message": "URGENT - our FastAPI service is down in production and we are losing orders. Need someone on a call in the next hour to debug and patch it. We can pay your standard rate, roughly 10-15 hours of work, budget around 60000 PKR. Please respond ASAP.",
+    "note": "urgent but legitimate - real budget, real scope"
+  },
+  {
+    "id": "L5",
+    "platform": "Fiverr",
+    "message": "Just need one small fix - my Python script throws a KeyError on line 40. Should take you 10 minutes. I can pay 1500 PKR for it.",
+    "note": "very small job"
+  },
+  {
+    "id": "L6",
+    "platform": "Upwork",
+    "message": "I need a full data analysis dashboard delivered by Friday, non-negotiable. Previous developer wasted my time and I will not accept excuses. If you cannot commit to Friday do not reply. Budget will be discussed after you confirm the deadline.",
+    "note": "aggressive about deadlines, budget withheld"
+  }
+]
