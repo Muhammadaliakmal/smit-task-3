@@ -14,7 +14,6 @@ That needs the real API and is what `uv run lead-desk L1` demonstrates.
 import asyncio
 import json
 import re
-from pathlib import Path
 
 from agents import RunContextWrapper
 

@@ -265,10 +265,12 @@ async def main_async() -> None:
         try:
             await triage_one(research_agent, triage_agent, lead, profile)
         except RateLimitError as exc:
-            # The Gemini free tier is a small daily quota and a full run costs
-            # two requests per lead. Turning this into a readable line rather
-            # than a 60-line traceback matters most in a live demo.
-            print(f"  RATE LIMITED by the Gemini API - stopping here.\n  {exc}")
+            # Reached only after retry.py has already exhausted its attempts.
+            # A full run costs two requests per lead, and the Gemini free tier
+            # allows 20 per day. Either provider can raise this, so the message
+            # does not name one. Turning it into a readable line rather than a
+            # 60-line traceback matters most in a live demo.
+            print(f"  RATE LIMITED by the provider - stopping here.\n  {exc}")
             break
 
 
