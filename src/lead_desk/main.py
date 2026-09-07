@@ -24,7 +24,7 @@ from openai import RateLimitError
 
 from lead_desk.agent_setup import build_research_agent, build_triage_agent
 from lead_desk.bonus import run_bonus_demo
-from lead_desk.config import PROJECT_ROOT
+from lead_desk.config import PROJECT_ROOT, describe_provider
 from lead_desk.context import FreelancerProfile, default_profile
 from lead_desk.retry import with_rate_limit_retry
 from lead_desk.schemas import LeadTriage
@@ -248,6 +248,11 @@ async def main_async() -> None:
 
         await run_self_test()
         return
+
+    # Printed before anything else so a demo never has to guess which model
+    # produced the answers on screen.
+    print(describe_provider())
+    print()
 
     # Built once and reused. An Agent is a plain description of a
     # configuration - it holds no per-run state, so the same objects safely

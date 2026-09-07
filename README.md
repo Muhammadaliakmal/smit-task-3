@@ -16,7 +16,28 @@ uv run lead-desk --message "..."     # triage a message not in the file
 uv run lead-desk --bonus             # Task 5B demo (makes no API calls)
 ```
 
-Requires `GEMINI_API_KEY` in `.env` (git-ignored).
+### Configuring the key
+
+`.env` in the project root (git-ignored):
+
+```
+GEMINI_API_KEY=...        # the required target - Task 0 is marked on this
+OPENAI_API_KEY=sk-...     # optional fallback
+MODEL_PROVIDER=openai     # optional: force the fallback
+OPENAI_MODEL=gpt-4.1-mini # optional: defaults to gpt-4.1-mini
+```
+
+Gemini is used whenever `GEMINI_API_KEY` is present. `MODEL_PROVIDER=openai`
+forces the fallback, which exists because the Gemini free tier allows 20
+requests and a six-lead run costs 12 - so a demo can be stopped by quota
+rather than by anything being wrong. The active provider is printed at
+startup, so nobody has to guess which model produced the answers on screen.
+
+Only `base_url`, `api_key` and the model name differ between the two
+branches in `config.py`. Tools, run context, guardrails and `output_type`
+are written against the SDK, not against a vendor.
+
+`--self-test` and `--bonus` make no API calls and run with no key at all.
 
 ## How it fits together
 

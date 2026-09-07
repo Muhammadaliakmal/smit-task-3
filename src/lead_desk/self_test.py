@@ -23,7 +23,7 @@ from lead_desk.agent_setup import (
     TRIAGE_INSTRUCTIONS,
     build_research_agent,
 )
-from lead_desk.config import PROJECT_ROOT
+from lead_desk.config import PROJECT_ROOT, ensure_offline_credentials
 from lead_desk.context import default_profile
 from lead_desk.guardrails import find_misrepresentation
 from lead_desk.main import decide_and_save
@@ -194,6 +194,8 @@ async def run_self_test() -> None:
     print("=" * 70)
     print("LEAD DESK - offline self-test (no API calls)")
     print("=" * 70)
+    if ensure_offline_credentials():
+        print("no API key configured - using a placeholder, nothing is sent")
 
     await test_context_is_invisible()
     test_min_rate_never_reaches_the_model()

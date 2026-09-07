@@ -21,6 +21,7 @@ import asyncio
 from agents import RunContextWrapper
 
 from lead_desk.agent_setup import build_research_agent
+from lead_desk.config import ensure_offline_credentials
 from lead_desk.context import FreelancerProfile, default_profile
 
 
@@ -37,6 +38,10 @@ async def tools_offered_for(profile: FreelancerProfile) -> list[str]:
 
 
 async def run_bonus_demo() -> None:
+    # This demo inspects the tool list without calling the API, so it runs
+    # even on a machine with no key configured.
+    ensure_offline_credentials()
+
     unverified = default_profile(verified=False)
     verified = default_profile(verified=True)
 

@@ -60,5 +60,12 @@ The Gemini free tier on this key allows **20 `generate_content` requests**
 before returning `429 RESOURCE_EXHAUSTED`. A full six-lead run costs **12
 requests** (two per lead, because of the two-stage pipeline). `main_async`
 catches `RateLimitError` and stops with one readable line instead of a
-traceback. For a live demo, run two or three leads plus `--bonus` and the
+traceback, and `retry.py` honours the server's own `retryDelay`. When the
+daily quota is genuinely spent the suggested delay *grows* (30s, then 58s)
+rather than shrinking, which is how you tell an exhausted day from a
+momentary burst limit.
+
+`config.py` also accepts `OPENAI_API_KEY` as a fallback provider so a demo is
+not hostage to one quota. Gemini stays the default and the required target;
+`MODEL_PROVIDER=openai` forces the fallback. For a live demo, run two or three leads plus `--bonus` and the
 guardrail (which cost zero requests between them).

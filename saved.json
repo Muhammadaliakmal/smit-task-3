@@ -2,14 +2,29 @@
   {
     "lead_id": "L1",
     "platform": "Upwork",
-    "saved_at": "2026-09-07T07:15:08+00:00",
+    "saved_at": "2026-09-07T07:45:06+00:00",
     "saved_for": "Muhammed Ali Akmal",
     "triage": {
-      "intent": "build a Python scraper for 3 e-commerce sites (product name, price, stock) writing to CSV daily",
+      "intent": "build a Python web scraper for 3 e-commerce sites",
       "budget_pkr": 80000,
       "red_flags": [],
       "priority": "high",
-      "suggested_reply": "Thank you for reaching out. We can certainly help with building a Python scraper for three e-commerce sites to extract product name, price, and stock data daily into a CSV. We have availability over the next two weeks to accommodate this project. Please share the 2-page scope document so we can review the details and provide a more precise estimate."
+      "suggested_reply": "Thank you for sharing the project details. I am available and can review the 2-page scope document to ensure full understanding. Given the budget and timeline, I believe we can proceed effectively. Please share the document so we can discuss the next steps."
+    }
+  },
+  {
+    "lead_id": "L4",
+    "platform": "Upwork",
+    "saved_at": "2026-09-07T07:45:22+00:00",
+    "saved_for": "Muhammed Ali Akmal",
+    "triage": {
+      "intent": "debug and patch a FastAPI service in production",
+      "budget_pkr": 60000,
+      "red_flags": [
+        "impossible deadline"
+      ],
+      "priority": "high",
+      "suggested_reply": "Thank you for reaching out. I understand the urgency and am available to join a call within the next hour to begin debugging your FastAPI service. Given the estimated 10-15 hours of work and your budget of 60000 PKR, please confirm if you would like to proceed so we can coordinate the next steps immediately."
     }
   }
 ]
